@@ -2,10 +2,7 @@ package com.example.butter.board.service;
 
 import java.util.List;
 
-// import org.springframework.web.multipart.MultipartHttpServletRequest;
-
 import com.example.butter.board.dto.BoardDto;
-// import com.example.butter.board.dto.BoardFileDto;
 
 public interface BoardService {
 	
@@ -18,6 +15,4 @@ public interface BoardService {
 	void updateBoard(BoardDto board) throws Exception;
 
 	void deleteBoard(int boardIdx) throws Exception;
-
-	// BoardFileDto selectBoardFileInformation(int idx, int boardIdx) throws Exception; 
 }

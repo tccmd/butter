@@ -47,6 +47,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
+	compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
     // implementation 'org.springframework.boot:spring-boot-starter-tomcat'  // Tomcat을 포함시키기
     // implementation 'javax.servlet:javax.servlet-api:4.0.1'  // JSP와 서블릿 API
     // implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'  // JSP 처리를 위한 Jasper 엔진

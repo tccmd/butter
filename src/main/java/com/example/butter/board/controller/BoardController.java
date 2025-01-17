@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-// import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.butter.board.dto.BoardDto;
@@ -60,4 +59,9 @@ public class BoardController {
 		boardService.deleteBoard(boardIdx);
 		return "redirect:/board/openBoardList.do";
 	}
+
+	// @RequestMapping("/error")
+    // public String getErrorPath() {
+    //     return "error/error_default"; // 이 경로로 이동하도록 설정
+    // }
 }
