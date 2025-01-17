@@ -4,15 +4,22 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+// import org.springframework.util.CollectionUtils;
+// import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.example.butter.board.dto.BoardDto;
+// import com.example.butter.board.dto.BoardFileDto;
 import com.example.butter.board.mapper.BoardMapper;
+// import com.example.butter.common.FileUtils;
 
 @Service
 public class BoardServiceImpl implements BoardService{
 	
 	@Autowired
 	private BoardMapper boardMapper;
+
+	// @Autowired
+	// private FileUtils fileUtils;
 	
 	@Override
 	public List<BoardDto> selectBoardList() throws Exception {
@@ -41,5 +48,10 @@ public class BoardServiceImpl implements BoardService{
 	public void deleteBoard(int boardIdx) throws Exception {
 		boardMapper.deleteBoard(boardIdx);
 	}
+
+	// @Override
+	// public BoardFileDto selectBoardFileInformation(int idx, int boardIdx) throws Exception {
+	// 	return boardMapper.selectBoardFileInformation(idx, boardIdx);
+	// }
 }	
 
