@@ -1,6 +1,6 @@
 package com.example.butter.board.dto;
 
-import java.util.List;
+// import java.util.List;
 
 import lombok.Data;
 

@@ -3,7 +3,7 @@ package com.example.butter.board.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
+// import org.apache.ibatis.annotations.Param;
 
 import com.example.butter.board.dto.BoardDto;
 // import com.example.butter.board.dto.BoardFileDto;

@@ -76,14 +76,21 @@
 				frm.submit();
 			});
 			
-			$("#delete").on("click", function(){
-				/* 여기 */
-				$("#method").val("delete");
+			// $("#delete").on("click", function(){
+			// 	/* 여기 */
+			// 	$("#method").val("delete");
 				
+			// 	var frm = $("#frm")[0];
+			// 	frm.action = "/board/"+boardIdx;
+			// 	frm.submit();
+			// });
+
+			$("#delete").on("click", function(){
 				var frm = $("#frm")[0];
-				frm.action = "/board/"+boardIdx;
+				frm.action = "/board/" + boardIdx + "/delete";
 				frm.submit();
 			});
+
 		});
 	</script>
 </body>
