@@ -191,4 +191,27 @@
 
   window.addEventListener("load", initSwiper);
 
+  /**
+   * header
+   */
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', function() {
+    console.log(header);
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY) {
+      // 스크롤 다운
+      header.classList.remove('header-visible');
+      header.classList.add('header-hidden');
+    } else {
+      // 스크롤 업
+      header.classList.remove('header-hidden');
+      header.classList.add('header-visible');
+    }
+
+    lastScrollY = currentScrollY;
+  });
+
+
 })();
