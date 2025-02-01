@@ -24,10 +24,68 @@
     </div><!-- End Page Title -->
 
     <!-- Blog Posts Section -->
-    <section id="blog-posts" class="blog-posts section">
+    <section id="blog-posts" class="blog-posts section" style="padding: 0;">
 
       <div class="container">
+
+        <div class="d-flex justify-content-end py-2">
+          <a type="button" class="btn custom-btn" data-bs-toggle="tooltip" title="Write" data-bs-trigger="manual" href="/blog-write"><i class="bi bi-pen"></i></a>
+        </div>
+
         <div class="row gy-4">
+
+          <p th:text="${list}"></p>
+          <!-- <p th:text="${randomImageIndex}"></p> -->
+
+          <!-- <div th:if="${#lists.size(list)} > 0" th:each="list : ${list}">
+            <td th:text="${list.boardIdx}"></td>
+            <td class="title"><a href="/jpa/board/" th:attrappend="href=${list.boardIdx}" th:text="${list.title}"></a></td>
+            <td th:text="${list.hitCnt}"></td>
+            <td th:text="${list.createdDatetime}"></td>
+          </div>  -->
+
+
+          <div th:if="${#lists.size(list) > 0}" th:each="list : ${list}" class="col-lg-4">
+            <p th:text="${list.title}"></p>
+            <p th:text="${list.creatorId}"></p>
+            <p th:text="${list.contents}"></p>
+            <p th:text="${list.formattedCreatedDatetime}"></p>
+            <p th:text="${list.randomImageIndex}"></p>
+            <article class="position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img th:src="@{'assets/img/blog/blog-' + ${list.randomImageIndex} + '.jpg'}" class="img-fluid" alt="">
+                <span th:text="${list.formattedCreatedDatetime}" class="post-date"></span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 th:text="${list.title}" class="post-title"></h3>
+
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span th:text="${list.creatorId}" class="ps-2"></span>
+                  </div>
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Politics</span>
+                  </div>
+                </div>
+
+                <p>
+                  Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
+                </p>
+
+                <hr>
+
+                <a href="/blog-details/" th:attrappend="href=${list.blogIdx}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                <!-- <a th:href="@{/blog-details/{blogIdx}(blogIdx=${list.blogIdx})}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a> -->
+
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
 
           <div class="col-lg-4">
             <article class="position-relative h-100">

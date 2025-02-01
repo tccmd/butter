@@ -1266,7 +1266,7 @@ section,
 }
 
 .portfolio .portfolio-item .portfolio-info .preview-link,
-.portfolio .portfolio-item .portfolio-info .details-link {
+.portfolio .portfolio-item .portfolio-info .details-link, .blog-write {
   position: absolute;
   right: 50px;
   font-size: 24px;
@@ -1277,11 +1277,11 @@ section,
 }
 
 .portfolio .portfolio-item .portfolio-info .preview-link:hover,
-.portfolio .portfolio-item .portfolio-info .details-link:hover {
+.portfolio .portfolio-item .portfolio-info .details-link:hover, .blog-write:hover {
   color: var(--accent-color);
 }
 
-.portfolio .portfolio-item .portfolio-info .details-link {
+.portfolio .portfolio-item .portfolio-info .details-link, .blog-write {
   right: 14px;
   font-size: 28px;
 }
@@ -2642,4 +2642,55 @@ section,
 
 .header-visible {
   transform: translateY(0%);
+}
+
+
+/*--------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+:root {
+  --primary: #DCBF57; /* 기본 색상 */
+  --primary-dark-10: #c1a14d; /* 10% 어두운 색 (수동 계산) */
+  --primary-dark-20: #a78c44; /* 20% 어두운 색 (수동 계산) */
+  --bs-white: #ffffff; /* 기본 흰색 */
+}
+
+/*--------------------------------------------------------------
+# Custom Button
+--------------------------------------------------------------*/
+.custom-btn {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-gray-dark);
+  --bs-btn-bg: var(--bs-white);
+  --bs-btn-border-color: var(--bs-gray-600);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--primary); /* 10% 어두운 색 */
+  --bs-btn-hover-border-color: var(--primary); /* 10% 어두운 색 */
+  --bs-btn-focus-shadow-rgb: var(--primary);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: var(--primary-dark-10); /* 20% 어두운 색 */
+  --bs-btn-active-border-color: var(--primary-dark-10); /* 20% 어두운 색 */
+}
+
+.custom-btn:hover {
+  background-color: var(--bs-btn-hover-bg);
+  border-color: var(--bs-btn-hover-border-color);
+  color: var(--bs-btn-hover-color);
+}
+
+.custom-btn:active {
+  background-color: var(--bs-btn-active-bg);
+  border-color: var(--bs-btn-active-border-color);
+  color: var(--bs-btn-active-color);
+}
+
+/*--------------------------------------------------------------
+# Tooltip
+--------------------------------------------------------------*/
+
+/* 항상 툴팁을 보이게 설정 */
+.tooltip {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: none; 
 }
